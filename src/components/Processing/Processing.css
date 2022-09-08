@@ -1,0 +1,25 @@
+.title_content{
+	font-size: 26px;
+	margin-bottom: 56px;
+	font-weight: 600;
+	color: #333333;
+}
+
+.subtitle_content{
+	font-size: 18px;
+	font-weight: 400;
+	color: #72849A;
+}
+
+.ant-card-body{
+	background-color: "#CCC";
+	padding: 0 !important;
+}
+.ant-card-meta{
+	justify-content: center;
+}
+.ant-card-meta-title{
+	font-size: 16px;
+	color: #222222;
+	margin: 24px 4px;
+}

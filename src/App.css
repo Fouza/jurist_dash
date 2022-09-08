@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-layout-sider-trigger {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.logo{
+	padding: 32px 12px;
+}
+
+.title{
+	font-size: 21px;
+	font-weight: 400;
+	margin: 0;
+}
+
+.subtitle{
+	font-size: 12px;
+	font-weight: 500;
+	white-space: nowrap
+}
