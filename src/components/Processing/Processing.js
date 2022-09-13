@@ -8,7 +8,13 @@ import './Processing.css';
 
 const { Meta } = Card;
 
-const Processing = () => {
+const Processing = ({handleNavigation}) => {
+
+
+	const handleChoice = ({key, document}) => {
+		localStorage.setItem('type', document)
+		handleNavigation({key: '/list'})
+	}
 
 	return (
 		<section>
@@ -21,7 +27,8 @@ const Processing = () => {
 					<Row gutter={16} align={'middle'}>
 						<Col style={{ marginTop: '8px' }} >
 							<Card
-								style={{ width: 300, justifyContent: 'center' }}
+								style={{ width: 300, cursor: 'pointer' }}
+								onClick={() => handleChoice({key: '/list', document: '1'})}
 								cover={
 									<img
 										alt="example"
@@ -38,7 +45,8 @@ const Processing = () => {
 						</Col>
 						<Col style={{ marginTop: '8px' }}>
 							<Card
-								style={{ width: 300 }}
+								style={{ width: 300, cursor: 'pointer' }}
+								onClick={() => console.log('2')}
 								cover={
 									<img
 										alt="example"

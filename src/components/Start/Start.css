@@ -1,0 +1,42 @@
+.step_title {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form_container {
+  margin-top: 40px;
+  border: 1px solid #e4e4e4;
+  padding: 32px 24px;
+}
+
+.form_container_2 {
+  margin-top: 40px;
+  border: 2px dashed #396aed;
+  background-color: #f1f5ff;
+  padding: 32px 24px;
+}
+
+.form_title {
+  font-size: 22px;
+  color: #222222;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #8d909e;
+  white-space: nowrap;
+}
+
+.ant-input-number {
+  width: 100% !important;
+}
+
+.form_footer {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  background-color: #FFF;
+}

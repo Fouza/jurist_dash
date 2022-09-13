@@ -1,0 +1,12 @@
+.label_input {
+  font-weight: 500;
+  font-size: 14px;
+  color: #5F6377;
+  white-space: nowrap;
+  margin-bottom: 6px ;
+  margin-top: 14px
+}
+
+.form{
+	margin-top: 10px;
+}

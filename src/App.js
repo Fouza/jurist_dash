@@ -7,6 +7,8 @@ import { Col, Divider, Row } from 'antd';
 import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Processing from './components/Processing/Processing';
+import Start from './components/Start/Start';
+import List from './components/List/List';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -29,31 +31,37 @@ const items = [
 
 const App = () => {
 
-	const [item, setItem] = useState()
+	const [key, setKey] = useState(localStorage.getItem("key"))
+
 
 	const handleNavigation = item => {
-		setItem(item)
+		setKey(item.key)
+		localStorage.setItem('key', item.key)
 	}
-
-	const [path, setPath] = useState(item ? item.key : '/')
 
 	const [children, setChildren] = useState(Dashboard)
 
 	useEffect(() => {
-		if (item) {
-			switch (item.key) {
+		if (key) {
+			switch (key) {
 				case '/' || '/dashboard':
 					setChildren(Dashboard)
 					break;
 				case '/processing': 
-					setChildren(Processing)
+					setChildren(<Processing handleNavigation={handleNavigation} />) 
+					break;
+				case '/list':
+					setChildren(<List handleNavigation={handleNavigation} />)
+					break;
+				case '/start':
+					setChildren(<Start />)
 					break;
 				default:
 					setChildren(Dashboard)
 			}
 		}
-	}, [item]);
-	console.log(item)
+	}, [key]);
+	console.log(key)
 
 	return (
 		<Layout
@@ -90,6 +98,7 @@ const App = () => {
 				<Content
 					style={{
 						margin: '0 16px',
+						paddingBottom: '70px'
 					}}
 				>
 					<div className="site-layout-background" style={{
@@ -101,7 +110,6 @@ const App = () => {
 				</Content>
 			</Layout>
 		</Layout>
-
 	);
 }
 
